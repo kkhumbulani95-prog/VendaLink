@@ -1,0 +1,25 @@
+{
+  "name": "vendalink",
+  "version": "1.0.0",
+  "description": "VendaLink — Find local street vendors near you. GKHack26 Street Economy",
+  "main": "backend/server.js",
+  "private": true,
+  "scripts": {
+    "install-backend": "cd backend && npm install",
+    "start": "cd backend && npm start",
+    "dev": "cd backend && npm run dev",
+    "build": "echo 'Build complete'",
+    "test": "cd backend && npm test"
+  },
+  "keywords": [
+    "street-economy",
+    "vendors",
+    "marketplace",
+    "geolocation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": "18.x"
+  }
+}
