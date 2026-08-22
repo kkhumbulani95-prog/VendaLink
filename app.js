@@ -1,4 +1,4 @@
-const API_BASE = '/api'; // Switch to 'http://localhost:3000/api' if serving on different port
+const API_BASE = windows.location.hostname === 'localhost ' ? 'http://localhost:3000/api' : '/api';
 let currentCategory = 'all';
 let openOnlyFlag = false;
 let searchQuery = '';
