@@ -4,15 +4,35 @@
     {
       "src": "backend/server.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "frontend/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/api/(.*)",
       "dest": "backend/server.js"
+    },
+    {
+      "src": "/(.*\\.(html|css|js|png|jpg|svg|ico))",
+      "dest": "frontend/$1"
+    },
+    {
+      "src": "/",
+      "dest": "frontend/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/$1"
     }
   ],
   "env": {
-    "NODE_ENV": "production"
+    "SUPABASE_URL": "@https://slcjnnswcxgormngplar.supabase.co",
+    "SUPABASE_PUBLISHABLE_KEY": "@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNsY2pubnN3Y3hnb3JtbmdwbGFyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzYyNjQxMTksImV4cCI6MjA1MTg0MDExOX0.O3favQbDOvAL-OEu3RnPEQ_iy0s7eh5hFvP5QLOpdKg",
+    "SUPABASE_SECRET_KEY": "@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNsY2pubnN3Y3hnb3JtbmdwbGFyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczNjI2NDExOSwiZXhwIjoyMDUxODQwMTE5fQ.DQ2et6iVVwcZsOjJNNpQlIbXQvxN3TA9U3w7BaLy3dc",
+    "JWT_SECRET": "@vendalink-super-secret-jwt-key-2024-gkhack26",
+    "JWT_EXPIRES_IN": "7d"
   }
 }
