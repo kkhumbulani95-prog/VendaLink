@@ -20,6 +20,26 @@
       "dest": "frontend/$1"
     },
     {
+      "src": "/vendor-login.html",
+      "dest": "frontend/vendor-login.html"
+    },
+    {
+      "src": "/vendor-signup.html",
+      "dest": "frontend/vendor-signup.html"
+    },
+    {
+      "src": "/vendor-admin.html",
+      "dest": "frontend/vendor-admin.html"
+    },
+    {
+      "src": "/styles.css",
+      "dest": "frontend/styles.css"
+    },
+    {
+      "src": "/app.js",
+      "dest": "frontend/app.js"
+    },
+    {
       "src": "/",
       "dest": "frontend/index.html"
     },
@@ -34,5 +54,11 @@
     "SUPABASE_SECRET_KEY": "@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNsY2pubnN3Y3hnb3JtbmdwbGFyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczNjI2NDExOSwiZXhwIjoyMDUxODQwMTE5fQ.DQ2et6iVVwcZsOjJNNpQlIbXQvxN3TA9U3w7BaLy3dc",
     "JWT_SECRET": "@vendalink-super-secret-jwt-key-2024-gkhack26",
     "JWT_EXPIRES_IN": "7d"
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api"
+    }
+  ]
 }
