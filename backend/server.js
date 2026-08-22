@@ -25,7 +25,8 @@ app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'ok', 
     timestamp: new Date().toISOString(),
-    database: 'Supabase PostgreSQL'
+    database: 'Supabase PostgreSQL',
+    nodeVersion: process.version
   });
 });
 

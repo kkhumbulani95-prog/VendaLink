@@ -15,6 +15,7 @@ backend/.env
 # Vercel
 .vercel
 .vercel.json.backup
+.vercel/**
 
 # OS files
 .DS_Store
