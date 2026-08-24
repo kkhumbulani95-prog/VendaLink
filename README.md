@@ -61,7 +61,7 @@ VendaLink Final/
 
 - Node.js (v14+)
 - npm or yarn
-- SQLite or MySQL
+- PostgreSQL
 
 ### Installation
 
@@ -124,7 +124,7 @@ Frontend runs at `http://localhost:8080`
 **Backend:**
 - Node.js
 - Express.js
-- SQLite / MySQL
+- PostgreSQL
 - JWT Authentication
 
 **Database:**
