@@ -56,9 +56,9 @@
   ],
   "env": {
     "NODE_ENV" : "production",
-    "SUPABASE_URL": "@https://slcjnnswcxgormngplar.supabase.co",
-    "SUPABASE_PUBLISHABLE_KEY": "@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNsY2pubnN3Y3hnb3JtbmdwbGFyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzYyNjQxMTksImV4cCI6MjA1MTg0MDExOX0.O3favQbDOvAL-OEu3RnPEQ_iy0s7eh5hFvP5QLOpdKg",
-    "SUPABASE_SECRET_KEY": "@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNsY2pubnN3Y3hnb3JtbmdwbGFyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczNjI2NDExOSwiZXhwIjoyMDUxODQwMTE5fQ.DQ2et6iVVwcZsOjJNNpQlIbXQvxN3TA9U3w7BaLy3dc",
+    "SUPABASE_URL": "@https://hwmzqpcprvtzekycofml.supabase.co",
+    "SUPABASE_PUBLISHABLE_KEY": "@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh3bXpxcGNwcnZ0emVreWNvZm1sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc1NTAzNzYsImV4cCI6MjEwMzEyNjM3Nn0.NFrh_wTyFPl3zcO95VnZRmO7IN-12Zv3wAIeMh4yENM",
+    "SUPABASE_SECRET_KEY": "@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh3bXpxcGNwcnZ0emVreWNvZm1sIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4NzU1MDM3NiwiZXhwIjoyMTAzMTI2Mzc2fQ.d0WLWK5vz3Os6Gijjjja9-2_KvIi2tC64n9KFjMozns",
     "JWT_SECRET": "@vendalink-super-secret-jwt-key-2024-gkhack26",
     "JWT_EXPIRES_IN": "7d"
   },
