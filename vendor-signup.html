@@ -304,62 +304,42 @@ const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:30
 
     // Signup form
     document.getElementById('signup-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
+  e.preventDefault();
+  
+  const btn = document.getElementById('signup-btn');
+  const message = document.getElementById('auth-message');
+  btn.disabled = true;
+  btn.textContent = 'Creating account...';
+  message.style.display = 'none';
 
-      const formData = {
-        businessName: document.getElementById('business-name').value.trim(),
-        ownerName: document.getElementById('owner-name').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        phoneNumber: document.getElementById('phone').value.trim(),
-        password: document.getElementById('password').value,
-        locationDescription: document.getElementById('location-desc').value.trim(),
-        latitude: parseFloat(document.getElementById('latitude').value),
-        longitude: parseFloat(document.getElementById('longitude').value),
-        paymentTypes: document.getElementById('payment-types').value.trim()
-      };
-
-      const btn = document.getElementById('signup-btn');
-      const message = document.getElementById('auth-message');
-
-      btn.disabled = true;
-      btn.textContent = 'Creating account...';
-      message.style.display = 'none';
-
-      try {
-        const res = await fetch(`${API_BASE}/auth/signup`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData)
-        });
-
-        const data = await res.json();
-
-        if (!res.ok) {
-          throw new Error(data.error || 'Signup failed');
+  try {
+    // Call Supabase Auth directly instead of fetching a non-existent local route
+    const { data, error } = await supabase.auth.signUp({
+      email: document.getElementById('email').value.trim(),
+      password: document.getElementById('password').value,
+      options: {
+        data: {
+          business_name: document.getElementById('vendor-name')?.value?.trim(),
+          owner_name: document.getElementById('owner-name').value.trim(),
+          phone_number: document.getElementById('phone').value.trim(),
+          location: document.getElementById('location-desc').value.trim(),
+          payment_types: document.getElementById('payment-types').value.trim()
         }
-
-        // Store token and vendor info
-        localStorage.setItem('vendorToken', data.token);
-        localStorage.setItem('vendorId', data.vendor.vendorId);
-        localStorage.setItem('businessName', data.vendor.businessName);
-
-        message.className = 'auth-message success';
-        message.textContent = '✓ Account created! Redirecting to your dashboard...';
-        message.style.display = 'block';
-
-        setTimeout(() => {
-          window.location.href = 'vendor-admin.html';
-        }, 1500);
-
-      } catch (err) {
-        console.error('Signup error:', err);
-        message.className = 'auth-message error';
-        message.textContent = err.message;
-        message.style.display = 'block';
-        btn.disabled = false;
-        btn.textContent = 'Create Account';
       }
     });
+
+    if (error) throw error;
+
+    // Handle success (e.g., redirect or display success message)
+    window.location.href = '/vendor-admin.html';
+  } catch (err) {
+    message.textContent = err.message || 'Signup failed';
+    message.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Create Account';
+  }
+});
 
     // Check if already logged in
     if (localStorage.getItem('vendorToken')) {

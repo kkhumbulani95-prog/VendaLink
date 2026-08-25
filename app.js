@@ -5,6 +5,14 @@ let searchQuery = '';
 let userCoords = null; // { lat, lng }
 let searchTimeout;
 
+import { createClient } from '@supabase/supabase-js';
+
+// Access the environment variables automatically provided by the Netlify extension
+const supabaseUrl = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = process.env.SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY;
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
 // 1. Fetch & Render Vendors
 async function loadVendors() {
   const list = document.getElementById('vendor-list');
